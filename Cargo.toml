@@ -1,0 +1,8 @@
+[package]
+name = "alfred-gems"
+version = "1.0.0"
+authors = ["Fernando Paredes <nano@fdp.io>"]
+
+[dependencies]
+quicli = "0.2.0"
+alfred = "4.0.1"

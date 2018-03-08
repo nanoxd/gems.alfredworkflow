@@ -1,0 +1,16 @@
+os: osx
+language: rust
+rust:
+- stable
+cache: cargo
+script:
+- cargo build
+- cargo test --color always
+before_deploy:
+- make release
+deploy:
+  provider: releases
+  file: gems.alfredworkflow
+  skip_cleanup: true
+  on:
+    tags: true
