@@ -9,7 +9,7 @@ extern crate serde_json;
 
 use quicli::prelude::*;
 use std::io;
-use alfred::ItemBuilder;
+use alfred::{ItemBuilder, Modifier};
 use models::Gem;
 
 mod models;
@@ -29,6 +29,8 @@ fn into_alfred_items(gems: Vec<Gem>, query: &str) -> io::Result<()> {
         .arg(gem.gem_page())
         .valid(true)
         .subtitle(gem.subtitle())
+        .subtitle_mod(Modifier::Option, format!("Open Repo: {}", gem.homepage()))
+        .arg_mod(Modifier::Option, gem.homepage())
         .into_item()
     })
     .collect();

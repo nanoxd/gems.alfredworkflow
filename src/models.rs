@@ -19,6 +19,10 @@ impl Gem {
   pub fn gem_page(&self) -> String {
     format!("{}", self.project_uri)
   }
+
+  pub fn homepage(&self) -> String {
+    format!("{}", self.homepage_uri)
+  }
 }
 
 #[cfg(test)]
@@ -51,5 +55,11 @@ mod tests {
   fn test_gem_page() {
     let gem = test_gem();
     assert_eq!(gem.gem_page(), "https://rubygems.org/gems/cocoapods")
+  }
+
+  #[test]
+  fn test_homepage() {
+    let gem = test_gem();
+    assert_eq!(gem.homepage(), "https://github.com/CocoaPods/CocoaPods")
   }
 }
