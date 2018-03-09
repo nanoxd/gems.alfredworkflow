@@ -14,11 +14,20 @@ use models::Gem;
 
 mod models;
 
-fn search_gems(query: String) -> Result<Vec<Gem>> {
+fn search_gems(query: &str) -> Result<Vec<Gem>> {
   let url = &format!("https://rubygems.org/api/v1/search?query={}", query);
   let response: Vec<Gem> = reqwest::get(url)?.json()?;
 
   Ok(response)
+}
+
+fn into_alfred_items(gems: Vec<Gem>, query: &str) -> io::Result<()> {
+  let items: Vec<_> = gems
+    .into_iter()
+    .map(|gem| ItemBuilder::new(gem.name).into_item())
+    .collect();
+
+  alfred::json::write_items(io::stdout(), &items)
 }
 
 fn placeholder_item() -> io::Result<()> {
@@ -35,12 +44,12 @@ struct Cli {
 }
 
 main!(|args: Cli| {
-  let query = args.query;
+  let query = &args.query;
 
   if query.is_empty() {
     placeholder_item()?;
   } else {
     let gems = search_gems(query)?;
-    println!("{:?}", gems)
+    into_alfred_items(gems, &query)?;
   }
 });

@@ -1,7 +1,7 @@
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Gem {
-  name: String,
-  version: String,
-  info: String,
-  homepage_uri: String,
+  pub name: String,
+  pub version: String,
+  pub info: String,
+  pub homepage_uri: String,
 }
