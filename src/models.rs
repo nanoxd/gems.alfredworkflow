@@ -23,6 +23,10 @@ impl Gem {
   pub fn homepage(&self) -> String {
     format!("{}", self.homepage_uri)
   }
+
+  pub fn stanza(&self) -> String {
+    format!("gem '{}', '~> {}'", self.name, self.version)
+  }
 }
 
 #[cfg(test)]
@@ -61,5 +65,11 @@ mod tests {
   fn test_homepage() {
     let gem = test_gem();
     assert_eq!(gem.homepage(), "https://github.com/CocoaPods/CocoaPods")
+  }
+
+  #[test]
+  fn test_stanza() {
+    let gem = test_gem();
+    assert_eq!(gem.stanza(), "gem 'cocoapods', '~> 1.4.0'")
   }
 }

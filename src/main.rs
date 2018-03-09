@@ -27,6 +27,7 @@ fn into_alfred_items(gems: Vec<Gem>, query: &str) -> io::Result<()> {
     .map(|gem| {
       ItemBuilder::new(gem.title())
         .arg(gem.gem_page())
+        .text_copy(gem.stanza())
         .valid(true)
         .subtitle(gem.subtitle())
         .subtitle_mod(Modifier::Option, format!("Open Repo: {}", gem.homepage()))
