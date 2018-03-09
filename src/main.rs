@@ -24,7 +24,12 @@ fn search_gems(query: &str) -> Result<Vec<Gem>> {
 fn into_alfred_items(gems: Vec<Gem>, query: &str) -> io::Result<()> {
   let items: Vec<_> = gems
     .into_iter()
-    .map(|gem| ItemBuilder::new(gem.name).into_item())
+    .map(|gem| {
+      ItemBuilder::new(gem.title())
+        .valid(true)
+        .subtitle(gem.subtitle())
+        .into_item()
+    })
     .collect();
 
   alfred::json::write_items(io::stdout(), &items)
