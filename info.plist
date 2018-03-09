@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F422FE86-E171-456A-A004-A0F527C34F48</string>
+				<string>8E898FD2-A1B8-422F-8169-B62BC999A818</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,6 +30,25 @@
 	<string>Gems</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8E898FD2-A1B8-422F-8169-B62BC999A818</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -77,23 +96,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>F422FE86-E171-456A-A004-A0F527C34F48</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>v1.0</string>
@@ -102,16 +104,16 @@
 		<key>49C02495-F306-4579-A935-DF6BB328A3E9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>70</integer>
 		</dict>
-		<key>F422FE86-E171-456A-A004-A0F527C34F48</key>
+		<key>8E898FD2-A1B8-422F-8169-B62BC999A818</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>560</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>70</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
