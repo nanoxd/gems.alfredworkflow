@@ -33,7 +33,23 @@ fn into_alfred_items(gems: Vec<Gem>, query: &str) -> io::Result<()> {
     })
     .collect();
 
-  alfred::json::write_items(io::stdout(), &items)
+  if items.is_empty() {
+    no_items(query)
+  } else {
+    alfred::json::write_items(io::stdout(), &items)
+  }
+}
+
+fn no_items(query: &str) -> io::Result<()> {
+  let item = ItemBuilder::new("No Gems Found")
+    .subtitle("Open RubyGems Search?")
+    .arg(format!(
+      "https://rubygems.org/search?utf8=✓&query={}",
+      query
+    ))
+    .into_item();
+
+  alfred::json::write_items(io::stdout(), &[item])
 }
 
 fn placeholder_item() -> io::Result<()> {
