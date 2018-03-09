@@ -26,6 +26,7 @@ fn into_alfred_items(gems: Vec<Gem>, query: &str) -> io::Result<()> {
     .into_iter()
     .map(|gem| {
       ItemBuilder::new(gem.title())
+        .arg(gem.gem_page())
         .valid(true)
         .subtitle(gem.subtitle())
         .into_item()

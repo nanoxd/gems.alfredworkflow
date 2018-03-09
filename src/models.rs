@@ -15,6 +15,10 @@ impl Gem {
   pub fn subtitle(&self) -> String {
     format!("{}", self.info)
   }
+
+  pub fn gem_page(&self) -> String {
+    format!("{}", self.project_uri)
+  }
 }
 
 #[cfg(test)]
@@ -41,5 +45,11 @@ mod tests {
   fn test_subtitle() {
     let gem = test_gem();
     assert_eq!(gem.subtitle(), "CocoaPods manages library dependencies for your Xcode project.\n\nYou specify the dependencies for your project in one easy text file")
+  }
+
+  #[test]
+  fn test_gem_page() {
+    let gem = test_gem();
+    assert_eq!(gem.gem_page(), "https://rubygems.org/gems/cocoapods")
   }
 }
