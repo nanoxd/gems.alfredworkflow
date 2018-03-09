@@ -6,3 +6,4 @@ authors = ["Fernando Paredes <nano@fdp.io>"]
 [dependencies]
 quicli = "0.2.0"
 alfred = "4.0.1"
+reqwest = "0.8.5"
