@@ -4,6 +4,7 @@ pub struct Gem {
   version: String,
   info: String,
   homepage_uri: String,
+  project_uri: String,
 }
 
 impl Gem {
@@ -25,7 +26,8 @@ mod tests {
       name: "cocoapods".to_string(),
       version: "1.4.0".to_string(),
       info: "CocoaPods manages library dependencies for your Xcode project.\n\nYou specify the dependencies for your project in one easy text file".to_string(),
-      homepage_uri: "https://github.com/CocoaPods/CocoaPods".to_string()
+      homepage_uri: "https://github.com/CocoaPods/CocoaPods".to_string(),
+      project_uri: "https://rubygems.org/gems/cocoapods".to_string(),
     }
   }
 
