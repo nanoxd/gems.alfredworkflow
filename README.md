@@ -6,7 +6,7 @@ A workflow for searching RubyGems on Alfred.
 
 ## Install
 
-Download [gems.alfredworkflow](https://github.com/nanoxd/pods.alfredworkflow/releases/latest)
+Download [gems.alfredworkflow](https://github.com/nanoxd/gems.alfredworkflow/releases/latest)
 
 ## Usage
 
